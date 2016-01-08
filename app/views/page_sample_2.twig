@@ -1,0 +1,39 @@
+{# Plantilla base #}
+{% extends 'layout.twig' %}
+
+
+{# Contenido de la página #}
+{% block page %}
+
+	{% include 'partials/menu.twig' %}
+
+	<main class="main">
+		{% include 'partials/menu_languages.twig' %}
+
+		<div class="wrapper">
+			<a class="btn  btn__top  btn--atras  js-btnAtras" href="{{ url('home') }}">
+				<i class="fi  fi--back"></i> {{ lang('btn.atras') }}
+				<span class="atrasGIF"><img src="{{ constant('DIR_IMAGES_ABS') ~ 'atras.gif' }}" alt=""></span>
+			</a>
+
+			<table cellspacing="0" cellpadding="0" class="tabla--paises">
+				{% for pais in paises %}
+					<tr>
+						{% if constant('LANG') == 'es' %}
+							<td>{{ pais.spanish_name | raw }}</td>
+						{% else %}
+							<td>{{ pais.short_name | raw }}</td>
+						{% endif %}
+						<td><img src="{{ constant('DIR_IMAGES_ABS') ~ 'banderas/' ~ pais.iso2 ~ '.png' }}" alt=""></td>
+					</tr>
+				{% endfor %}
+			</table>
+
+			<a class="btn  btn__bottom  btn--atras  js-btnAtras" href="{{ url('home') }}">
+				<i class="fi  fi--back"></i> atrás
+				<span class="atrasGIF"><img src="{{ constant('DIR_IMAGES_ABS') ~ 'atras.gif' }}" alt=""></span>
+			</a>
+		</div>
+	</main>
+
+{% endblock page %}

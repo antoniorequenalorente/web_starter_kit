@@ -1,0 +1,25 @@
+{# Plantilla base #}
+{% extends 'layout.twig' %}
+
+
+{# Contenido de la página #}
+{% block page %}
+
+	{% include 'partials/menu.twig' %}
+
+	<main class="main">
+		{% include 'partials/menu_languages.twig' %}
+
+		<div class="wrapper">
+			<h1>{{ lang('texto.saludo') }}</h1>
+			<h2>{{ lang('texto.bienvenida') }}</h2>
+			<p><a class="btn  btn--large" href="{{ url('seccion.interior') }}">{{ lang('btn.entrar') }}</a></p>
+			<hr>
+			<ul class="links">
+				<li><a href="https://es.linkedin.com/in/antoniorequenalorente" target="_blank" class="fi  fi--linkedin"></a></li>
+				<li><a href="https://github.com/antoniorequenalorente" target="_blank" class="fi  fi--github"></a></li>
+			</ul>
+		</div>
+	</main>
+
+{% endblock page %}

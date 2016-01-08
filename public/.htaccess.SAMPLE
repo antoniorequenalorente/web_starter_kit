@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+
+    # Activar RewriteEngine
+    Options +FollowSymLinks
+    RewriteEngine on
+    RewriteBase /
+
+    # Redirigir siempre a www.dominio.com
+    # RewriteCond %{HTTP_HOST} !^www\.dominio\.com$ [NC]
+    # RewriteRule ^(.*) http://www.dominio.com/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    <FilesMatch "\.(ttf|otf|eot|woff|woff2|json)$">
+		<IfModule mod_headers.c>
+			Header set Access-Control-Allow-Origin "*"
+		</IfModule>
+    </FilesMatch>
+
+    # Todo pasa por "index.php"
+	RewriteRule ^ index.php [QSA,L]
+
+    # REDIRECCION 404
+    ErrorDocument 404 http://www.dominio.com/
+</IfModule>

@@ -1,0 +1,21 @@
+/*------------------------------------------------------------------------------------------------------------*\
+    $FUENTES
+\*------------------------------------------------------------------------------------------------------------*/
+
+
+// Fuente
+@font-face {
+	font-family: 'fuente';
+	src:url($dir-fonts + 'fuente.eot');
+	src:url($dir-fonts + 'fuente.eot?#iefix') format('embedded-opentype'),
+		url($dir-fonts + 'fuente.woff2') format('woff2'),
+		url($dir-fonts + 'fuente.woff') format('woff'),
+		url($dir-fonts + 'fuente.ttf') format('truetype'),
+		url($dir-fonts + 'fuente.svg#fuente') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);

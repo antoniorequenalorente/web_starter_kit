@@ -1,0 +1,22 @@
+.icon {
+	background: url(../images/sprite.svg) no-repeat;
+}
+
+.icon--home {
+	background-position: 0 0;
+}
+
+.icon--home-size {
+	width: 45px;
+	height: 45px;
+}
+
+.icon--user {
+	background-position: 100% 0;
+}
+
+.icon--user-size {
+	width: 45px;
+	height: 45px;
+}
+

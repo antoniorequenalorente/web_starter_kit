@@ -1,0 +1,45 @@
+{
+  "name": "Web_Starter_Kit",
+  "version": "1.0",
+  "main": "index.php",
+  "authors": [
+    "Antonio Requena Lorente <antoniorequena87@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery"             : "~2",
+    "gsap"               : "~1",
+    "underscore"         : "~1",
+    "angularjs"          : "~1",
+    "svg4everybody"      : "~2"
+  },
+  "devDependencies": {
+
+  },
+  "preen": {
+    "jquery": [
+      "dist/*.js",
+      "dist/*.map"
+    ],
+    "underscore": [
+      "*.js",
+      "*.map"
+    ],
+    "gsap": [
+      "src/minified/**/*.js"
+    ],
+    "angularjs": [
+      "*.css",
+      "*.js",
+      "*.map"
+    ]
+  }
+}

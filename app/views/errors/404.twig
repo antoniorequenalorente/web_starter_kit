@@ -1,0 +1,19 @@
+{# Plantilla base #}
+{% extends 'layout.twig' %}
+
+
+{# Contenido de la página #}
+{% block page %}
+
+	<div class="error  error--404">
+		<div class="neon">
+			<span class="neon__1">E</span>rr<span class="neon__1">o</span>r
+	    	<span class="neon__2">404</span>
+    	</div>
+		<img class="gif" src="{{ constant('DIR_IMAGES_ABS') ~ 'travolta.gif' }}" alt="">
+		<a class="btn  btn--large" href="{{ url('home') }}">{{ lang('btn.salir') }}</a>
+	</div>
+
+
+
+{% endblock page %}

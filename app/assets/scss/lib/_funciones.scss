@@ -1,0 +1,58 @@
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $FUNCIONES
+\*------------------------------------------------------------------------------------------------------------*/
+
+// Función para obtener colores grises
+@function gris($code) {
+	@if str-length($code) == 1 {
+		@return #{'#' + $code + $code + $code + $code + $code + $code};
+	} @else if str-length($code) == 2 {
+		@return #{'#' + $code + $code + $code};
+	} @else if str-length($code) == 3 {
+		@return #{'#' + $code + $code};
+	}
+}
+
+
+
+
+/* Función para controlar el index
+
+    .selector {
+        z-index: z(supremo);
+    }
+
+ * compila:
+
+	.selector {
+        z-index: 99999;
+    }
+
+*/
+@function z($layer) {
+    @if not map-has-key($z-layers, $layer) {
+        @warn "No se ha encontrado capa para '#{$layer}' en $z-layers. Propiedad omitida.";
+    }
+    @return map-get($z-layers, $layer);
+}
+
+
+
+
+/* Función para mantener el tamaño de fuente consistente
+
+ .selector {
+    font-size: fs(x-small);
+}
+
+*/
+@function fs($font-size) {
+    @if not map-has-key($size-vars, $font-size) {
+        @warn "No se ha encontrado tamaño para '#{$font-size}' en $size-vars. Propiedad omitida.";
+    }
+    @return map-get($size-vars, $font-size);
+}

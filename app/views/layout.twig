@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ constant('LANG') }}" class="{{ class_html }}">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="{{ asset('img', 'favicon', 'ico', 'favicons') }}" />
+
+		{# Estilos CSS (de terceros) #}
+		{% if css_vendor %}
+			{% for css_file_vendor in css_vendor %}
+				<link rel="stylesheet" href="{{ asset('css', css_file_vendor, '', constant('DIR_VENDOR')) }}" />
+			{% endfor %}
+		{% endif %}
+
+		{# Estilos CSS (principal) #}
+		<link rel="stylesheet" href="{{ asset('css', constant('CSS_STYLE')) }}" />
+
+
+		{# Metas #}
+		<title>{{ metas.title | default(lang('metas.title')) }}</title>
+        <meta name="description" content="{{ metas.description | default(lang('metas.description')) }}" />
+        <meta name="keywords" content="{{ metas.keywords | default(lang('metas.keywords')) }}" />
+
+        {# Metas para redes sociales #}
+        <meta property="og:title" content="{{ metas.title | default(lang('metas.title')) }}" />
+		<meta property="og:url" content="{{ metas.link | default('') }}" />
+		<meta property="og:image" content="{{ metas.foto | default('') }}" />
+		<meta property="og:image:type" content="{{ metas.foto_mime | default('') }}" />
+		<meta property="og:image:width" content="{{ metas.foto_w | default('') }}" />
+		<meta property="og:image:height" content="{{ metas.foto_h | default('') }}" />
+		<meta property="og:site_name" content="{{ metas.title | default(lang('metas.title')) }}" />
+		<meta property="og:description" content="{{ metas.description | default(lang('metas.description')) }}" />
+		<link rel="image_src" href="{{ metas.foto | default('') }}">
+
+
+        {# Scripts #}
+		{% if js_vendor_head %}
+			{% for js_vendor_src, js_vendor_file in js_vendor_head %}
+				<script src="{{ asset('js', js_vendor_file, '', js_vendor_src) }}"></script>
+			{% endfor %}
+		{% endif %}
+
+    	{# Variables JavaScript #}
+    	<script>
+		var base_url  = "{{ constant('BASE_URL') }}";
+		var base_ajax = '/ajax/';
+    	{% if js_vars %}
+			{% for var_name,var_val in js_vars %}
+				var {{ var_name }} = '{{ var_val }}';
+			{% endfor %}
+		{% endif %}
+		</script>
+
+	</head>
+	<body class="{{ class_body }}">
+		{# Google Analytics #}
+		{% include 'partials/analyticstracking.twig' %}
+
+
+		{# Contenido de la página #}
+		{% block page %}{% endblock page %}
+
+
+		{# SCRIPTS #}
+		<script src="{{ asset('js', constant('JS_BASIC'), '', 'vendor') }}"></script>
+		<script src="{{ asset('js', constant('JS_PLUGINS')) }}"></script>
+
+		{% if js_vendor %}
+			{% for js_file_vendor in js_vendor %}
+				<script src="{{ asset('js', js_file_vendor, '', constant('DIR_VENDOR')) }}"></script>
+			{% endfor %}
+		{% endif %}
+
+		<script src="{{ asset('js', constant('JS_MAIN')) }}"></script>
+
+		{% if js_extra %}
+			{% for js_file in js_extra %}
+				<script src="{{ asset('js', js_file) }}"></script>
+			{% endfor %}
+		{% endif %}
+
+		{# Browser Sync (solo para desarrollo local) #}
+		{% if constant('ENV') == 'local' %}
+			{% include 'dev/browser-sync-script.twig' %}
+		{% endif %}
+	</body>
+</html>

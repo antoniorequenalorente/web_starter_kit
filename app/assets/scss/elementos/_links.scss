@@ -1,0 +1,37 @@
+
+@if $incluir-links == true{
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $LINKS
+\*------------------------------------------------------------------------------------------------------------*/
+a {
+	color           : $linkcolor;
+	text-decoration : none;
+
+	&:visited {
+		color : $linkcolor-visited;
+	}
+
+	&:hover {
+		text-decoration : underline;
+		color : $linkcolor-hover;
+	}
+
+	&:focus {
+		outline : 0;
+	}
+
+	&:hover,
+	&:active {
+		outline : 0;
+	}
+}
+
+
+
+
+
+}	// endif

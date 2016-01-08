@@ -1,0 +1,304 @@
+/*------------------------------------------------------------------------------------------------------------*\
+    $SETTINGS
+\*------------------------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $OBJETOS Y ABSTRACCIONES
+	¿Qué objetos y abstracciones vamos a usar?
+	(
+		true: se usa,
+		false: no se usa
+	)
+\*------------------------------------------------------------------------------------------------------------*/
+
+// Abstracciones
+$incluir-botones     : true!default;
+$incluir-paginacion  : true!default;
+$incluir-tablas      : true!default;
+$incluir-texturas    : true!default;
+
+// Elementos
+$incluir-figure      : true!default;
+$incluir-formularios : true!default;
+$incluir-imagenes    : true!default;
+$incluir-links       : true!default;
+$incluir-tipografia  : true!default;
+
+// Layout
+$incluir-navegacion : true!default;
+
+// Debug
+$incluir-debug      : false!default;
+
+
+
+
+
+/**
+ *
+ * Definimos y configuramos las variables CSS que vamos a utilizar
+ *
+ */
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $BREAKPOINTS
+\*------------------------------------------------------------------------------------------------------------*/
+
+/* Lo usamos con el mixin respond-to($breakpoint)
+
+.text {
+    color: pink;
+    @include respond-to(medium) {
+        color: maroon;
+    }
+}
+
+
+'bp_1' : 75em,  // 1200px
+'bp_2' : 64em,  // 1024px
+'bp_3' : 48em,  //  768px
+'bp_4' : 30em,  //  480px
+'bp_5' : 20em   //  320px
+
+
+Para convertir PX a EM --> http://pxtoem.com/
+
+*/
+
+$breakpoints: (
+    'bp_1' : 75em,
+    'bp_2' : 64em,
+    'bp_3' : 48em,
+    'bp_4' : 30em,
+    'bp_5' : 20em
+) !default;
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $DIRECTORIOS
+\*------------------------------------------------------------------------------------------------------------*/
+$dir-images : "../images/";
+$dir-fonts  : "../fonts/";
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $LAYOUT
+\*------------------------------------------------------------------------------------------------------------*/
+$pagemaxwidth        : 80%;
+$gutterwidth         : 24px;
+$radius              : 2px;
+$hovertransitiontime : .3s;
+$animationtime       : .8s;
+
+// Z-Index
+$z-layers: (
+    'supremo'  : 99999,
+    'muy-alto' :  9999,
+    'alto'     :   999,
+    'medio'    :   200,
+    'default'  :     0,
+    'bajo'     :    -1,
+    'muy-bajo' :   -99
+) !default;
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $TAMAÑOS
+\*------------------------------------------------------------------------------------------------------------*/
+$basefontsize   : 16;
+$baselineheight : 24;
+$fontsize       : 16px;
+$lineheight     : 1.5em;
+
+$size-vars: (
+    "x-small"  :    .8,
+    "small"    :    .9,
+    "big"      :    1.5,
+    "huge"     :    2
+);
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $FONT-FACE
+\*------------------------------------------------------------------------------------------------------------*/
+$font_base      : 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_secondary : Georgia, Times, "Times New Roman";
+$font_tertiary  : "Courier New", monospace;
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $COLORES
+\*------------------------------------------------------------------------------------------------------------*/
+
+// Colores del tema
+$color1         : red;
+$color1-light   : lighten($color1, 5%);
+$color1-dark    : darken($color1, 5%);
+$color1-inverse : invert($color1);
+$color2         : green;
+$color2-light   : lighten($color2, 5%);
+$color2-dark    : darken($color2, 5%);
+$color2-inverse : invert($color2);
+$color3         : yellow;
+$color3-light   : lighten($color3, 5%);
+$color3-dark    : darken($color3, 5%);
+$color3-inverse : invert($color3);
+
+// Enlaces
+$linkcolor         : blue;
+$linkcolor-hover   : darken($linkcolor, 10%);
+$linkcolor-visited : $linkcolor;
+$linkcolor-focus   : darken($linkcolor-visited, 10%);
+
+
+// Escala de grises
+$black 			: rgb(0,0,0);
+$superdark  	: lighten($black, 10%);
+$darkergrey 	: lighten($black, 15%);
+$darkgrey 		: lighten($black, 25%);
+$grey 			: lighten($black, 50%);
+$lightgrey 		: lighten($black, 75%);
+$lightergrey 	: lighten($black, 90%);
+$white 			: rgb(255,255,255);
+
+
+// Web
+$background       : $white;
+$textcolor        : $darkergrey;
+$textcolor-strong :	$black;
+$bordercolor      : cyan;
+
+
+// Colores sociales
+$fb         : rgb(59, 89, 182);
+$tw         : rgb(64,153,255);
+$googleplus : rgb(221, 75, 57);
+$pinterest  : rgb(203, 32, 39);
+$skype      : rgb(18,165,244);
+$spotify    : rgb(129,183,26);
+$instagram  : #4E433C;
+$tumblr     : #2B4964;
+$vimeo      : #86B32D;
+$soundcloud : #f76600;
+$youtube    : #FF3333;
+$linkedin   : #4875B4;
+$flickr     : #FE0883;
+$foursquare : #8FD400;
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $TEXTURAS
+\*------------------------------------------------------------------------------------------------------------*/
+
+// Definimos colores y elementos de popups, mensajes de alerta, etc...
+$color-alert 	: rgb(252,228,207);
+$color-error 	: rgb(218,79,73);
+$color-info 	: rgb(165,221,223);
+$color-success 	: rgb(91,183,91);
+$color-warning 	: rgb(250,167,50);
+
+
+// Texturas de popups
+$alertbordercolor	: darken($color-alert, 20%);
+$alertborderwidth 	: 1px;
+$alertborderstyle 	: solid;
+$alerttext			: darken($color-alert, 60%);
+
+
+// Error
+$alerterrorcolor 	: lighten($color-error, 30%);
+$alerterrorborder  	: lighten($color-error, 20%);
+$alerterrortext 	: $color-error;
+
+
+// Info
+$alertinfocolor 	: lighten($color-info, 10%);
+$alertinfoborder  	: darken($color-info, 10%);
+$alertinfotext 		: darken($color-info, 50%);
+
+
+// Inverso
+$alertinversecolor 	: inverse($color-alert);
+$alertinverseborder : $black;
+$alertinversetext 	: $white;
+
+
+// Success
+$alertsuccesscolor 	: lighten($color-success, 30%);
+$alertsuccessborder : lighten($color-success, 20%);
+$alertsuccesstext 	: darken($color-success, 20%);
+
+
+// Advertencia
+$alertwarningcolor 	: lighten($color-warning, 30%);
+$alertwarningborder : lighten($color-warning, 20%);
+$alertwarningtext 	: darken($color-warning, 20%);
+
+
+// Badges
+$badgebackground    : $color1;
+$badgecolor         : $textcolor;
+
+
+// Botones
+$buttonbackground   : $color1-light;
+$buttonbordercolor  : darken($buttonbackground, 10%);
+$buttonbottombordercolor : darken($buttonbordercolor, 10%);
+$buttoncolor        : $black;
+$buttonborderwidth  : 1px;
+$buttonborderstyle  : solid;
+
+
+// Boxes (well)
+$wellbackground     : lighten($color1, 75%);
+$wellbordercolor    : darken($wellbackground, 20%);
+$wellborderwidth    : 1px;
+$wellborderstyle    : solid;
+$wellshadow         : darken($wellbackground, 10%);
+$wellshadowblur     : 10px;
+
+
+// Tablas
+$tablebackground    : transparent;
+$tablestripe        : lighten($color1, 60%);
+$tablehover         : lighten($color1, 50%);
+$tableborder        : lighten($color1, 40%);
+$tableborderwidth   : 1px;
+$tableborderstyle   : solid;
+
+
+// Formularios
+$inputbackground    : $white;
+$inputborder        : $lightgrey;
+$inputborderwidth   : 1px;
+$inputborderstyle   : solid;
+$inputhover         : lighten($black, 50%);
+$inputfocus         : $color1, 40%;
+$placeholdercolor   : $lightergrey;
+
+
+// Navegación
+$nav-width:               44px;
+$nav-height:              $nav-width * 1.2;
+$nav-icon-size:           16px;
+$nav-color:               white;
+$nav-background:          $color2;
+$nav-borders:             lighten($nav-background, 10%);
+$nav-lists-background:    $color1;

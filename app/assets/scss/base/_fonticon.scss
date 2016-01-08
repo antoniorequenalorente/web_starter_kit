@@ -1,0 +1,48 @@
+@font-face {
+	font-family: "fonticon";
+	src: url('../files/fonts/fonticon.eot');
+	src: url('../files/fonts/fonticon.eot?#iefix') format('eot'),
+			 url('../files/fonts/fonticon.woff') format('woff'),
+			 url('../files/fonts/fonticon.ttf') format('truetype'),
+			 url('../files/fonts/fonticon.svg#fonticon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+%icon-base-styles {
+	display: inline-block;
+	font-family: "fonticon";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
+}
+
+$icons: (
+	android: "\EA01",
+  apple: "\EA02",
+  back: "\EA03",
+  codepen: "\EA04",
+  dropbox: "\EA05",
+  email: "\EA06",
+  facebook: "\EA07",
+  github: "\EA08",
+  instagram: "\EA09",
+  linkedin: "\EA0A",
+  pinterest: "\EA0B",
+  skype: "\EA0C",
+  twitter: "\EA0D",
+  whatsapp: "\EA0E",
+  windows: "\EA0F",
+  youtube: "\EA10"
+);
+
+@each $name, $icon in $icons {
+	.fi--#{$name}:before {
+		@extend %icon-base-styles;
+		content: $icon;
+	}
+}

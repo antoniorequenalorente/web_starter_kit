@@ -1,0 +1,28 @@
+{
+    "name"			: "Base_Web",
+  	"version"		: "1.0",
+    "prefer-stable" : true,
+    "config" : {
+        "vendor-dir": "app/assets/php"
+    },
+    "require" : {
+        "slim/slim"                  : "~3",
+        "slim/twig-view"             : "~2",
+        "slim/flash"                 : "~0",
+        "monolog/monolog"            : "~1",
+        "vlucas/phpdotenv"           : "~2",
+        "j4mie/paris"                : "~1",
+        "raveren/kint"               : "~1",
+        "phpmailer/phpmailer"        : "~5",
+        "browscap/browscap-php"      : "~2",
+        "tackk/cartographer"         : "~1"
+    }
+}
+
+
+
+
+
+
+
+

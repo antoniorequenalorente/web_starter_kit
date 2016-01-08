@@ -1,0 +1,27 @@
+
+@if $incluir-figure == true{
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*\
+    $ELEMENTOS - FIGURE
+\*------------------------------------------------------------------------------------------------------------*/
+figure {
+	margin-bottom : $lineheight;
+	img {
+		margin-bottom : $baselineheight / 4;
+	}
+	figcaption {
+		display     : block;
+		font-weight : normal;
+		font-style  : italic;
+		color       : $grey;
+		@include font-size(14, no);
+	}
+}
+
+
+
+
+} //endif
