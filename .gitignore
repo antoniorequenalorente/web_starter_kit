@@ -1,7 +1,6 @@
 *.map
 node_modules/
-cache/
-logs/
+
 composer.lock
 npm-debug.log
 .htaccess
