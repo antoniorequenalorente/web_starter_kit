@@ -14,7 +14,7 @@ include realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/constants.php';
 include realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/functions.php';
 
 // Para poder usar $_SESSION
-if ( getenv('SESSION_START') ) {
+if ( getenv('SESSION_START') == 'true' ) {
 	session_cache_limiter(false);
 	session_start();
 }
@@ -31,7 +31,7 @@ define('LANG', getLang());
 include_once realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/lang/' . LANG . '.php';
 
 // Para poder usar Bases de Datos
-if ( getenv('DB_USE') ) {
+if ( getenv('DB_USE') == 'true' ) {
 	ORM::configure('mysql:host='.getenv('DB_HOST').';dbname='.getenv('DB_NAME').';charset=utf8');
 	ORM::configure('username', getenv('DB_USERNAME'));
 	ORM::configure('password', getenv('DB_PASSWORD'));
@@ -39,7 +39,9 @@ if ( getenv('DB_USE') ) {
 	// Carga todas las clases
 	$clases = array_diff( scandir(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/database/'), array('..', '.') );
 	foreach ($clases as $clase) {
-		require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/database/' . $clase;
+		if ( is_file(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/database/' . $clase) ) {
+			require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/database/' . $clase;
+		}
 	}
 }
 
