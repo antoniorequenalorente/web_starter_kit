@@ -28,34 +28,27 @@
 
 */
 
-// Para usar con "max-width"
-@mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  }
+// $type = max --> para usar con "max-width"
+// $type = min --> para usar con "min-width"
+@mixin respond-to($breakpoint, $type: max) {
 
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
-  }
+	@if map-has-key($breakpoints, $breakpoint) {
+		@if	$type == min {
+		    @media (min-width: map-get($breakpoints, $breakpoint)) {
+				@content;
+		    }
+		} @else {
+		    @media (max-width: map-get($breakpoints, $breakpoint)) {
+				@content;
+			}
+		}
+  	}
+
+	@else {
+    	@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
+	}
+
 }
-
-// Para usar con "min-width"
-@mixin respond-to-min($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  }
-
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
-  }
-}
-
 
 
 // Centrar y dar un ancho máximo igual a $pagemaxwidth
