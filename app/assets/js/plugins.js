@@ -23,5 +23,3 @@
 
 // Place any jQuery/helper plugins in here.
 
-// Si se van a usar SVG's externos
-svg4everybody();

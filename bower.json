@@ -18,8 +18,7 @@
     "jquery"             : "~2",
     "gsap"               : "~1",
     "underscore"         : "~1",
-    "angularjs"          : "~1",
-    "svg4everybody"      : "~2"
+    "angularjs"          : "~1"
   },
   "devDependencies": {
 

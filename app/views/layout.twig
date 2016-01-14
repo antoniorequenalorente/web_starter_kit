@@ -44,7 +44,7 @@
     	{# Variables JavaScript #}
     	<script>
 		var base_url  = "{{ constant('BASE_URL') }}";
-		var base_ajax = '/ajax/';
+		var base_ajax = "{{ constant('BASE_URL') ~ 'ajax/' }}";
     	{% if js_vars %}
 			{% for var_name,var_val in js_vars %}
 				var {{ var_name }} = '{{ var_val }}';
