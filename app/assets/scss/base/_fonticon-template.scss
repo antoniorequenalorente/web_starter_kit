@@ -9,16 +9,19 @@
 	font-style: normal;
 }
 
-%icon-base-styles {
-	display: inline-block;
-	font-family: "<%= fontName %>";
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	text-decoration: inherit;
-	-webkit-font-smoothing: antialiased;
+.fi {
+	display                 : inline-block;
+	font-family             : "<%= fontName %>";
+	font-style              : normal;
+	font-weight             : normal;
+	font-variant            : normal;
+	text-transform          : none;
+	//line-height             : inherit;
+	text-decoration         : inherit;
+	text-rendering          : auto;
+	speak                   : none;
+	-webkit-font-smoothing  : antialiased;
+	-moz-osx-font-smoothing : grayscale;
 }
 
 $icons: (
@@ -27,7 +30,7 @@ $icons: (
 
 @each $name, $icon in $icons {
 	.<%= className %>-#{$name}:before {
-		@extend %icon-base-styles;
+		//@extend .fi;
 		content: $icon;
 	}
 }

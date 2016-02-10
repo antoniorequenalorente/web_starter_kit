@@ -56,3 +56,22 @@
     }
     @return map-get($size-vars, $font-size);
 }
+
+
+
+
+
+
+/* Función para mantener el interlineado de fuente consistente
+
+ .selector {
+    line-height: lh(x-small);
+}
+
+*/
+@function lh($line-height) {
+    @if not map-has-key($interlineados, $line-height) {
+        @warn "No se ha encontrado tamaño para '#{$line-height}' en $size-vars. Propiedad omitida.";
+    }
+    @return map-get($interlineados, $line-height);
+}

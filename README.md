@@ -177,3 +177,11 @@ devolvería:
 	}
 }
 ```
+
+# Consideraciones
+### ``gulpfile.js``
+* **jsBasicLibraries**: array que agrupa las dependencias JavaScript "básicas" del proyecto. Cuando se ejecuta la tarea *gulp js-basic* se combinan todas estas dependencias en un único fichero (``public/js/vendor/basic.min.js``). Este fichero se carga en todas las páginas (lo podemos encontrar en ``app/views/layout.twig``)
+
+* **jsVendorLibraries**: array que agrupa las dependencias JavaScript de terceros que se van a utilizar en el proyecto. Cuando se ejecuta la tarea *gulp js-vendor* se crea un fichero por cada una de ellas en (``public/js/vendor/``).
+
+* **cssVendorLibraries**: array que agrupa las dependencias CSS de terceros que se van a utilizar en el proyecto. Cuando se ejecuta la tarea *gulp css-vendor* se crea un fichero por cada una de ellas en (``public/css/vendor/``).
