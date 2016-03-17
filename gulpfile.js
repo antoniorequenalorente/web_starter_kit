@@ -39,7 +39,8 @@ var gulp 		=  	require('gulp'),
 	               		'preen',
 	               		'del',
 	               		'svgSprite',
-	               		'sprity'
+	               		'sprity',
+	               		'gutil'
                		], // the glob(s) to search for
 	               	//config: 'package.json',                                         // where to find the plugins, by default  searched up from process.cwd()
 					scope         : ['dependencies', 'devDependencies', 'peerDependencies'], // which keys in the config to look within
@@ -93,7 +94,8 @@ var paths = {
     fonts     : dirPublic + 'files/fonts/',
     js        : dirPublic + 'js/',
     jsVendor  : dirPublic + 'js/vendor/',
-    images    : dirPublic + 'images/'
+    images    : dirPublic + 'images/',
+    favicons  : dirPublic + 'images/favicons/',
 };
 
 // Tipos de ficheros
@@ -124,7 +126,8 @@ var files = {
 	templates          :  paths.main + 'app/views/**/*.twig',
 	imagesSvg          :  assets.imagesSvg + '*.svg',
 	iconsSvg           :  assets.iconsSvg + '*.svg',
-	iconsPng           :  assets.iconsPng + '*.png'
+	iconsPng           :  assets.iconsPng + '*.png',
+	favicon            :  assets.images + 'favicon.png'
 };
 
 // Ficheros JavaScript
@@ -517,4 +520,44 @@ gulp.task('images-svg', function () {
         	basename: 'images_SVG'
         }))
         .pipe( gulp.dest( paths.images ) );
+});
+
+
+
+/**
+ * [favicons]
+ * Crea favicons en todos los formatos
+ */
+gulp.task('favicons', function () {
+	return gulp.src( files.favicon )
+		.pipe( $.favicons({
+			appName        : 'Web Starter Kit',
+			appDescription : 'Estructura y ficheros para proyectos web',
+			version        : '1.0',
+			developerName  : 'Antonio Requena Lorente',
+			developerURL   : 'https://es.linkedin.com/in/antoniorequenalorente',
+			background     : '#000000',
+			path           : 'images/favicons',
+			url            : '/',
+			display        : 'browser',
+			orientation    : 'landscape',
+			html           : paths.favicons + 'favicons.html',
+			replace        : true,
+			online         : true,
+			logging        : true,
+			icons          : {
+				android      : true,	// Create Android homescreen icon. `boolean`
+				appleIcon    : true,    // Create Apple touch icons. `boolean`
+				appleStartup : true,    // Create Apple startup images. `boolean`
+				coast        : true,    // Create Opera Coast icon. `boolean`
+				favicons     : true,    // Create regular favicons. `boolean`
+				firefox      : true,    // Create Firefox OS icons. `boolean`
+				opengraph    : true,    // Create Facebook OpenGraph image. `boolean`
+				twitter      : true,    // Create Twitter Summary Card image. `boolean`
+				windows      : true,    // Create Windows 8 tile icons. `boolean`
+				yandex       : true     // Create Yandex browser icon. `boolean`
+            },
+        }))
+        .on( 'error', $.gutil.log )
+        .pipe( gulp.dest( paths.favicons ) );
 });
