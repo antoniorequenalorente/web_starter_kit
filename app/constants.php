@@ -47,6 +47,10 @@ define( 'DIR_VIDEOS_ABS', 	DIR_FILES_ABS.DIR_VIDEOS );
 define( 'DIR_AUDIOS', 		DIR_FILES.'audios'.SLASH );
 define( 'DIR_AUDIOS_ABS', 	DIR_FILES_ABS.DIR_AUDIOS );
 
+// Descargas
+define( 'DIR_DOWNLOADS', 		DIR_FILES.'descargas'.SLASH );
+define( 'DIR_DOWNLOADS_ABS', 	DIR_FILES_ABS.DIR_DOWNLOADS );
+
 
 
 

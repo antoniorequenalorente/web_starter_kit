@@ -1,8 +1,5 @@
 
-@if $incluir-paginacion == true{
-
-
-
+@if $incluir-paginacion == true {
 
 
 /*------------------------------------------------------------------------------------------------------------*\
@@ -28,18 +25,19 @@
 
  */
 .pagination {
-    text-align     : center;
+	margin     : 0;
+	padding    : 0;
+	text-align : center;
     // Remove whitespace caused by `inline-block`.
-    letter-spacing : -0.31em;
-    word-spacing   : -0.43em;
+    font-size: 0;
     & > li {
         display        : inline-block;
-        padding        : 12px;
+        padding        : 0;
         letter-spacing : normal;
         word-spacing   : normal;
+        @include font-size(14, no);
         & > a {
-            padding : 12px;
-            margin  : -12px;
+            padding : .5em 1em;
         }
     }
     .pagination__first a:before {
