@@ -1,8 +1,5 @@
 
-@if $incluir-tablas == true{
-
-
-
+@if $incluir-tablas == true {
 
 
 /*------------------------------------------------------------------------------------------------------------*\
@@ -42,15 +39,13 @@ table {
 	}
 	tbody tr td,
 	tbody tr th {
-		@include transition(background-color .25s 0 linear);
+		transition: background-color .25s 0 linear;
 	}
 	tbody tr:hover td,
 	tbody tr:hover th {
 		background-color : $tablehover;
 	}
 }
-
-
 
 // CONDENSED ====================================================
 .table-condensed {
@@ -59,8 +54,6 @@ table {
 		padding: 4px 5px;
 	}
 }
-
-
 
 // BORDERED ====================================================
 .table-bordered {
@@ -79,8 +72,6 @@ table {
 	}
 }
 
-
-
 // STRIPED ====================================================
 .table-striped {
 	tbody tr:nth-child(odd) td,
@@ -88,8 +79,6 @@ table {
 		background-color: $tablestripe;
 	}
 }
-
-
 
 
 

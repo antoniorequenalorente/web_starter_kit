@@ -6,7 +6,11 @@
     $FUNCIONES
 \*------------------------------------------------------------------------------------------------------------*/
 
-// Función para obtener colores grises
+/**
+ * Función para obtener colores grises
+ * @param  {string} $code Puede ser 'X' => 'XXXXXX' | 'XY' => 'XYXYXXY' | 'XYZ' => 'XYZXYZ'
+ * @return {string}       Color en hexadecimal '#XXXXXX'
+ */
 @function gris($code) {
 	@if str-length($code) == 1 {
 		@return #{'#' + $code + $code + $code + $code + $code + $code};
@@ -18,21 +22,24 @@
 }
 
 
-
-
-/* Función para controlar el index
-
-    .selector {
-        z-index: z(supremo);
+/**
+ * Función para obtener un color
+ * @param  {string} $name  Nombre
+ * @return {integer}       Valor
+ */
+@function color($name) {
+    @if not map-has-key($colors, $name) {
+        @warn "No se ha encontrado color para '#{$name}' en $colors. Propiedad omitida.";
     }
+    @return map-get($colors, $name);
+}
 
- * compila:
 
-	.selector {
-        z-index: 99999;
-    }
-
-*/
+/**
+ * Función para controlar el index
+ * @param  {string} $layer Tipo/nivel
+ * @return {integer}       Valor
+ */
 @function z($layer) {
     @if not map-has-key($z-layers, $layer) {
         @warn "No se ha encontrado capa para '#{$layer}' en $z-layers. Propiedad omitida.";
@@ -41,18 +48,27 @@
 }
 
 
-
-
-/* Función para mantener el tamaño de fuente consistente
-
- .selector {
-    font-size: fs(x-small);
-}
-
-*/
+/**
+ * Función para mantener el tamaño de fuente consistente
+ * @param  {string} $font-size Nombre
+ * @return {integer}           Valor
+ */
 @function fs($font-size) {
     @if not map-has-key($size-vars, $font-size) {
         @warn "No se ha encontrado tamaño para '#{$font-size}' en $size-vars. Propiedad omitida.";
     }
     @return map-get($size-vars, $font-size);
+}
+
+
+/**
+ * Función para mantener el interlineado de fuente consistente
+ * @param  {string} $line-height Nombre
+ * @return {integer}             Valor
+ */
+@function lh($line-height) {
+    @if not map-has-key($interlineados, $line-height) {
+        @warn "No se ha encontrado tamaño para '#{$line-height}' en $size-vars. Propiedad omitida.";
+    }
+    @return map-get($interlineados, $line-height);
 }

@@ -1,5 +1,5 @@
 
-@if $incluir-links == true{
+@if $incluir-links == true {
 
 
 
@@ -10,20 +10,17 @@
 a {
 	color           : $linkcolor;
 	text-decoration : none;
-
 	&:visited {
 		color : $linkcolor-visited;
 	}
-
-	&:hover {
+	&:hover,
+	&:focus {
+		color           : $linkcolor-hover;
 		text-decoration : underline;
-		color : $linkcolor-hover;
 	}
-
 	&:focus {
 		outline : 0;
 	}
-
 	&:hover,
 	&:active {
 		outline : 0;

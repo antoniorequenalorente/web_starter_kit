@@ -12,11 +12,10 @@
 	)
 \*------------------------------------------------------------------------------------------------------------*/
 
-// Abstracciones
-$incluir-botones     : true!default;
-$incluir-paginacion  : true!default;
-$incluir-tablas      : true!default;
-$incluir-texturas    : true!default;
+// Base
+$incluir-reset       : true!default;
+$incluir-fuentes     : true!default;
+$incluir-fonticons   : true!default;
 
 // Elementos
 $incluir-figure      : true!default;
@@ -25,11 +24,17 @@ $incluir-imagenes    : true!default;
 $incluir-links       : true!default;
 $incluir-tipografia  : true!default;
 
+// Abstracciones
+$incluir-botones     : true!default;
+$incluir-paginacion  : true!default;
+$incluir-tablas      : true!default;
+$incluir-texturas    : true!default;
+
 // Layout
-$incluir-navegacion : true!default;
+$incluir-navegacion  : true!default;
 
 // Debug
-$incluir-debug      : false!default;
+$incluir-debug       : false!default;
 
 
 
@@ -50,17 +55,27 @@ $incluir-debug      : false!default;
 
 .text {
     color: pink;
-    @include respond-to(medium) {
+    @include respond-to(bp_5) {
         color: maroon;
     }
 }
 
-
-'bp_1' : 75em,  // 1200px
-'bp_2' : 64em,  // 1024px
-'bp_3' : 48em,  //  768px
-'bp_4' : 30em,  //  480px
-'bp_5' : 20em   //  320px
+'bp_1' : 87.5em    // 1400px
+'bp_2' : 85.375em  // 1366px
+'bp_3' : 80em  	   // 1280px
+'bp_4' : 75em      // 1200px
+'bp_5' : 68.75em   // 1100px
+'bp_6' : 64em      // 1024px
+'bp_7' : 60em      //  960px
+'bp_8' : 56.25em   //  900px
+'bp_9' : 52.5em    //  840px
+'bp_10' : 48em     //  768px
+'bp_11' : 42.5em   //  680px
+'bp_12' : 37.5em   //  600px
+'bp_13' : 32.5em   //  520px
+'bp_14' : 30em     //  480px
+'bp_15' : 25em     //  400px
+'bp_16' : 20em     //  320px
 
 
 Para convertir PX a EM --> http://pxtoem.com/
@@ -68,13 +83,23 @@ Para convertir PX a EM --> http://pxtoem.com/
 */
 
 $breakpoints: (
-    'bp_1' : 75em,
-    'bp_2' : 64em,
-    'bp_3' : 48em,
-    'bp_4' : 30em,
-    'bp_5' : 20em
+    'bp_1'  : 87.5em,
+	'bp_2'  : 85.375em,
+	'bp_3'  : 80em,
+	'bp_4'  : 75em,
+	'bp_5'  : 68.75em,
+	'bp_6'  : 64em,
+	'bp_7'  : 60em,
+	'bp_8'  : 56.25em,
+	'bp_9'  : 52.5em,
+	'bp_10' : 48em,
+	'bp_11' : 42.5em,
+	'bp_12' : 37.5em,
+	'bp_13' : 32.5em,
+	'bp_14' : 30em,
+	'bp_15' : 25em,
+	'bp_16' : 20em,
 ) !default;
-
 
 
 
@@ -84,7 +109,7 @@ $breakpoints: (
     $DIRECTORIOS
 \*------------------------------------------------------------------------------------------------------------*/
 $dir-images : "../images/";
-$dir-fonts  : "../fonts/";
+$dir-fonts  : "../files/fonts/";
 
 
 
@@ -113,6 +138,7 @@ $z-layers: (
 
 
 
+
 /*------------------------------------------------------------------------------------------------------------*\
     $TAMAÑOS
 \*------------------------------------------------------------------------------------------------------------*/
@@ -127,6 +153,13 @@ $size-vars: (
     "big"      :    1.5,
     "huge"     :    2
 );
+
+$interlineados: (
+    "h1-diapo-home" : 52,
+    "h2-diapo-home" : 32,
+);
+
+
 
 
 
@@ -146,25 +179,17 @@ $font_tertiary  : "Courier New", monospace;
 \*------------------------------------------------------------------------------------------------------------*/
 
 // Colores del tema
-$color1         : red;
-$color1-light   : lighten($color1, 5%);
-$color1-dark    : darken($color1, 5%);
-$color1-inverse : invert($color1);
-$color2         : green;
-$color2-light   : lighten($color2, 5%);
-$color2-dark    : darken($color2, 5%);
-$color2-inverse : invert($color2);
-$color3         : yellow;
-$color3-light   : lighten($color3, 5%);
-$color3-dark    : darken($color3, 5%);
-$color3-inverse : invert($color3);
+$colors: (
+	'uno'  : red,
+	'dos'  : blue,
+	'tres' : green,
+) !default;
 
 // Enlaces
 $linkcolor         : blue;
-$linkcolor-hover   : darken($linkcolor, 10%);
+$linkcolor-hover   : darken($linkcolor, 20%);
 $linkcolor-visited : $linkcolor;
-$linkcolor-focus   : darken($linkcolor-visited, 10%);
-
+$linkcolor-focus   : darken($linkcolor-visited, 20%);
 
 // Escala de grises
 $black 			: rgb(0,0,0);
@@ -176,13 +201,11 @@ $lightgrey 		: lighten($black, 75%);
 $lightergrey 	: lighten($black, 90%);
 $white 			: rgb(255,255,255);
 
-
 // Web
 $background       : $white;
 $textcolor        : $darkergrey;
 $textcolor-strong :	$black;
-$bordercolor      : cyan;
-
+$bordercolor      : $lightgrey;
 
 // Colores sociales
 $fb         : rgb(59, 89, 182);
@@ -203,6 +226,7 @@ $foursquare : #8FD400;
 
 
 
+
 /*------------------------------------------------------------------------------------------------------------*\
     $TEXTURAS
 \*------------------------------------------------------------------------------------------------------------*/
@@ -214,75 +238,64 @@ $color-info 	: rgb(165,221,223);
 $color-success 	: rgb(91,183,91);
 $color-warning 	: rgb(250,167,50);
 
-
 // Texturas de popups
 $alertbordercolor	: darken($color-alert, 20%);
 $alertborderwidth 	: 1px;
 $alertborderstyle 	: solid;
 $alerttext			: darken($color-alert, 60%);
 
-
 // Error
 $alerterrorcolor 	: lighten($color-error, 30%);
 $alerterrorborder  	: lighten($color-error, 20%);
 $alerterrortext 	: $color-error;
-
 
 // Info
 $alertinfocolor 	: lighten($color-info, 10%);
 $alertinfoborder  	: darken($color-info, 10%);
 $alertinfotext 		: darken($color-info, 50%);
 
-
 // Inverso
 $alertinversecolor 	: inverse($color-alert);
 $alertinverseborder : $black;
 $alertinversetext 	: $white;
-
 
 // Success
 $alertsuccesscolor 	: lighten($color-success, 30%);
 $alertsuccessborder : lighten($color-success, 20%);
 $alertsuccesstext 	: darken($color-success, 20%);
 
-
 // Advertencia
 $alertwarningcolor 	: lighten($color-warning, 30%);
 $alertwarningborder : lighten($color-warning, 20%);
 $alertwarningtext 	: darken($color-warning, 20%);
 
-
 // Badges
-$badgebackground    : $color1;
+$badgebackground    : $color-success;
 $badgecolor         : $textcolor;
 
-
 // Botones
-$buttonbackground   : $color1-light;
-$buttonbordercolor  : darken($buttonbackground, 10%);
+$buttonbackground        : $darkgrey;
+$buttonbordercolor       : darken($buttonbackground, 10%);
 $buttonbottombordercolor : darken($buttonbordercolor, 10%);
-$buttoncolor        : $black;
-$buttonborderwidth  : 1px;
-$buttonborderstyle  : solid;
-
+$buttoncolor             : $black;
+$buttonborderwidth       : 1px;
+$buttonborderstyle       : solid;
 
 // Boxes (well)
-$wellbackground     : lighten($color1, 75%);
+$wellbackground     : lighten($black, 75%);
 $wellbordercolor    : darken($wellbackground, 20%);
 $wellborderwidth    : 1px;
 $wellborderstyle    : solid;
 $wellshadow         : darken($wellbackground, 10%);
 $wellshadowblur     : 10px;
 
-
 // Tablas
 $tablebackground    : transparent;
-$tablestripe        : lighten($color1, 60%);
-$tablehover         : lighten($color1, 50%);
-$tableborder        : lighten($color1, 40%);
+$tablestripe        : lighten($black, 60%);
+$tablehover         : lighten(blue, 50%);
+$tableborder        : lighten($darkgrey, 40%);
 $tableborderwidth   : 1px;
 $tableborderstyle   : solid;
-
 
 // Formularios
 $inputbackground    : $white;
@@ -290,15 +303,14 @@ $inputborder        : $lightgrey;
 $inputborderwidth   : 1px;
 $inputborderstyle   : solid;
 $inputhover         : lighten($black, 50%);
-$inputfocus         : $color1, 40%;
+$inputfocus         : red, 40%;
 $placeholdercolor   : $lightergrey;
-
 
 // Navegación
 $nav-width:               44px;
 $nav-height:              $nav-width * 1.2;
 $nav-icon-size:           16px;
 $nav-color:               white;
-$nav-background:          $color2;
+$nav-background:          green;
 $nav-borders:             lighten($nav-background, 10%);
-$nav-lists-background:    $color1;
+$nav-lists-background:    cyan;
