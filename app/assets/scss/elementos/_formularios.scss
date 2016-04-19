@@ -1,5 +1,5 @@
 
-@if $incluir-formularios == true{
+@if $incluir-formularios == true {
 
 
 
@@ -58,7 +58,7 @@ button,
 select,
 textarea {
 	font-family : $font_base;
-	@include box-sizing(border-box);
+	box-sizing  : border-box;
 }
 
 label {
@@ -112,15 +112,15 @@ input[type="radio"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-	padding : 0;
-	*width  : 13px;
-	*height : 13px;
-	@include box-sizing(border-box);
+	padding    : 0;
+	*width     : 13px;
+	*height    : 13px;
+	box-sizing : border-box;
 }
 
 input[type="image"] {
-	border : 0;
-	@include box-shadow(none);
+	border     : 0;
+	box-shadow : none;
 }
 
 input[type="file"] {
@@ -130,7 +130,7 @@ input[type="file"] {
 	border           : initial;
 	background-color : transparent;
 	background-color : initial;
-	@include box-shadow(none);
+	box-shadow       : none;
 }
 
 input[type="button"],
@@ -204,8 +204,8 @@ textarea[disabled],
 input[readonly],
 select[readonly],
 textarea[readonly] {
-	cursor : not-allowed;
-	@include opacity(.5);
+	cursor  : not-allowed;
+	opacity : .5;
 }
 
 
@@ -221,7 +221,7 @@ input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 select:focus {
-	@include box-shadow(none);
+	box-shadow: none;
 }
 
 ::-webkit-input-placeholder {
@@ -315,12 +315,12 @@ input:-moz-placeholder {
 
 // Validamos los formularios que son "required":
 input:required:focus:invalid {
-		background-color :lighten($color-alert, 5%);
-		border           :1px solid $color-alert;
+		background-color : lighten($color-alert, 5%);
+		border           : 1px solid $color-alert;
 }
 input:required:focus:valid {
-		background-color :lighten($color-success, 40%);
-		border           :1px solid $color-success;
+		background-color : lighten($color-success, 40%);
+		border           : 1px solid $color-success;
 }
 
 

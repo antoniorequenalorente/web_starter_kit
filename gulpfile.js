@@ -25,12 +25,14 @@ var entorno = 'local';
 /* ==================================================================================================================
 	Dependencias
 ================================================================================================================== */
-            	// npm install --save-dev gulp
-var gulp 		=  	require('gulp'),
-				// npm install --save-dev browser-sync
-	browserSync = 	require('browser-sync'),
-            	// npm install --save-dev gulp-load-plugins
-	$    		=  	require('gulp-load-plugins')({
+            	 	// npm install --save-dev gulp
+var gulp 		 = require('gulp'),
+				 	// npm install --save-dev browser-sync
+	browserSync  = require('browser-sync'),
+            	 	// npm install --save-dev autoprefixer
+	//autoprefixer = require('autoprefixer'),
+					// npm install --save-dev gulp-load-plugins
+	$    		= require('gulp-load-plugins')({
 	               	pattern: [
 	               		'gulp-*',
 	               		'gulp.*',
@@ -40,7 +42,8 @@ var gulp 		=  	require('gulp'),
 	               		'del',
 	               		'svgSprite',
 	               		'sprity',
-	               		'gutil'
+	               		'gutil',
+	               		'autoprefixer'
                		], // the glob(s) to search for
 	               	//config: 'package.json',                                         // where to find the plugins, by default  searched up from process.cwd()
 					scope         : ['dependencies', 'devDependencies', 'peerDependencies'], // which keys in the config to look within
@@ -55,7 +58,8 @@ var gulp 		=  	require('gulp'),
 						'iconfont-css'       : 'iconfontCss',
 						'glob-stream'        : 'gs',
 						'npm-check-updates'  : 'ncu',
-						'gulp-bundle-assets' : 'bundle'
+						'gulp-bundle-assets' : 'bundle',
+						'autoprefixer'       : 'autoprefixer'
 	                }
 	            });
 
@@ -314,6 +318,11 @@ gulp.task('check-updates', function () {
  * Compila los ficheros SASS
  */
 gulp.task('sass', function () {
+    var processors = [
+    	$.autoprefixer( {
+    		browsers: ['last 3 version']
+    	} )
+    ];
     return $.sass( assets.sass + 'style.scss',
         {
 			precision       : 10,
@@ -326,6 +335,7 @@ gulp.task('sass', function () {
         .on('error', function (err) {
         	console.log( err.message );
         })
+        .pipe( $.postcss(processors) )
         .pipe( gulp.dest( assets.css ) );
 });
 

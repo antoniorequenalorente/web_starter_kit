@@ -1,4 +1,4 @@
-
+@if $incluir-reset == true {
 
 
 
@@ -93,14 +93,14 @@ menu,
 nav,
 section,
 summary {
-  display:block
+  display: block
 }
 
 * {
-    @include vendor(box-sizing, border-box);
+    box-sizing: border-box;
     &::before,
     &::after {
-        @include vendor(box-sizing, border-box);
+        box-sizing: border-box;
     }
 }
 
@@ -110,3 +110,10 @@ img {
     vertical-align         : middle;
     -ms-interpolation-mode : bicubic;
 }
+
+
+
+
+
+
+} // endif

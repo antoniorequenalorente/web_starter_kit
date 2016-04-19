@@ -44,7 +44,7 @@ $(function(){
 
 	// Abrir y cerrar menú lateral
 	$('.js-btnMenu').on('click', function() {
-		$(this).toggleClass('material--arrow');
+		$(this).toggleClass('is-active');
 		$('body').toggleClass('menuOpen');
 	});
 

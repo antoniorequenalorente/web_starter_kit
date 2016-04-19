@@ -43,6 +43,8 @@
     "gulp-svgmin"       : "~1",
     "gulp-svgstore"     : "~6",
     "gulp-favicons"     : "~2",
-    "gutil"             : "~1"
+    "gutil"             : "~1",
+    "gulp-postcss"      : "~6",
+    "autoprefixer"      : "~6"
   }
 }
