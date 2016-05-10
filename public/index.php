@@ -1,7 +1,7 @@
 <?php
 
 // Carga todas las librerías PHP
-include_once realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/assets/php/autoload.php';
+include_once realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/libraries/vendor/autoload.php';
 
 // Iniciliza PHPDOTENV para usar las variables del fichero .env
 $dotenv = new Dotenv\Dotenv(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'));

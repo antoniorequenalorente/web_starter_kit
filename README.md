@@ -33,20 +33,21 @@ Es recomendable echar un vistazo al fichero ``gulpfile.js`` y ver los métodos q
 [carpeta_open]: http://cdn.flaticon.com/png/16/25302.png "carpeta"
 [fichero]: http://cdn.flaticon.com/png/16/70383.png "fichero"
 ![alt text][carpeta_open] **app**
-<br>&#9492;&#9472;&nbsp;![alt text][carpeta_open] **assets**
+<br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **assets**
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **css**
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&nbsp;![alt text][carpeta_open] **images**
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **images**
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **fonticons** &#187; *SVG's para formar la fuente tipográfica*
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **sprite-png** &#187; *imágenes para generar el sprite PNG*
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **sprite-svg**
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&nbsp;![alt text][carpeta_open] **svg** &#187; *SVG's para combinarlos en un solo elemento tipo ``<symbol>``*
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **js**
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **php** &#187; *librerías PHP de terceros gestionadas por ``composer.json``*
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&nbsp;![alt text][carpeta_open] **scss**
 <br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **controllers**
 <br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **database** &#187; *clases que se corresponden con las tablas de la base de datos*
 <br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **extensions**
 <br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **lang**
+<br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **libraries**
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&nbsp;![alt text][carpeta_open] **vendor** &#187; *librerías PHP de terceros gestionadas por ``composer.json``*
 <br>&#9492;&#9472;&nbsp;![alt text][carpeta_open] **views** &#187; *plantillas para el 'front-end'*
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **dev** &#187; *para usar durante el desarrollo*
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **errors** &#187; *plantillas de páginas de error*

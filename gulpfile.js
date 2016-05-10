@@ -29,8 +29,6 @@ var entorno = 'local';
 var gulp 		 = require('gulp'),
 				 	// npm install --save-dev browser-sync
 	browserSync  = require('browser-sync'),
-            	 	// npm install --save-dev autoprefixer
-	//autoprefixer = require('autoprefixer'),
 					// npm install --save-dev gulp-load-plugins
 	$    		= require('gulp-load-plugins')({
 	               	pattern: [
@@ -81,7 +79,8 @@ var assets = {
 	sass      : dirAssets + 'scss/',
 	js        : dirAssets + 'js/',
 	jsVendor  : dirAssets + 'js/vendor/',
-	php       : dirAssets + 'php/',
+	php       : dirAssets + 'libraries/',
+	phpVendor : dirAssets + 'libraries/vendor/',
 	images    : dirAssets + 'images/',
 	fonticons : dirAssets + 'images/fonticons/',
 	imagesSvg : dirAssets + 'images/svg/',
