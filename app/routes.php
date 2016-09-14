@@ -17,9 +17,9 @@ $app->group('/{lang_url:['.str_replace(DEFAULT_LANG.'|', '', LANGS).']{0,2}}', f
 		}
 
 	    // Variables para pasar a la vista
-	    $vars = array(
+	    $vars = [
 	    	'current_section' => 'home',
-	        'metas' => array(
+	        'metas' => [
 	            'title'       => '',
 	            'description' => '',
 	            'keywords'    => '',
@@ -28,25 +28,25 @@ $app->group('/{lang_url:['.str_replace(DEFAULT_LANG.'|', '', LANGS).']{0,2}}', f
 		        'foto_w'      => '',
 		        'foto_h'      => '',
 		        'foto_mime'   => ''
-	        ),
+	        ],
 			'class_html'    => '',
 			'class_body'    => '',
-			'css_vendor'    => array(
+			'css_vendor'    => [
 				//DIR_VENDOR => 'lib_extra_css'
-			),
-			'js_vars' => array(
+			],
+			'js_vars' => [
 				'sampleVar' => 'sampleValue123'
-			),
-			'js_vendor_head' => array(
+			],
+			'js_vendor_head' => [
 				//'js_vendor_head',
-			),
-			'js_vendor' => array(
+			],
+			'js_vendor' => [
 				//
-			),
-			'js_extra' => array(
+			],
+			'js_extra' => [
 				//
-			)
-	    );
+			]
+	    ];
 
 	    // Cargamos la vista
 	    $this->view->render($response, 'page_sample.twig', $vars);
@@ -63,9 +63,9 @@ $app->group('/{lang_url:['.str_replace(DEFAULT_LANG.'|', '', LANGS).']{0,2}}', f
 		$paises = Pais::select('*')->find_array();
 
 		// Variables para pasar a la vista
-	    $vars = array(
+	    $vars = [
 	    	'current_section' => 'seccion.interior',
-	        'metas' => array(
+	        'metas' => [
 	            'title'       => '',
 	            'description' => '',
 	            'keywords'    => '',
@@ -74,26 +74,26 @@ $app->group('/{lang_url:['.str_replace(DEFAULT_LANG.'|', '', LANGS).']{0,2}}', f
 		        'foto_w'      => '',
 		        'foto_h'      => '',
 		        'foto_mime'   => ''
-	        ),
+	        ],
 			'class_html'    => '',
 			'class_body'    => '',
-			'css_vendor'    => array(
+			'css_vendor'    => [
 				//DIR_VENDOR => 'lib_extra_css'
-			),
-			'js_vars' => array(
+			],
+			'js_vars' => [
 				'sampleVar' => 'sampleValue123'
-			),
-			'js_vendor_head' => array(
+			],
+			'js_vendor_head' => [
 				//'js_vendor_head',
-			),
-			'js_vendor' => array(
+			],
+			'js_vendor' => [
 
-			),
-			'js_extra' => array(
+			],
+			'js_extra' => [
 				'page_sample_2.min'
-			),
+			],
 			'paises' => $paises
-	    );
+	    ];
 
 	    // Cargamos la vista
 	    $this->view->render($response, 'page_sample_2.twig', $vars);
@@ -116,10 +116,10 @@ $app->group('/ajax/', function () {
 	    CAMBIAR IDIOMA
 	 ----------------------------------------------------------------------------------------------------------------*/
 	$this->post('changelang', function ($request, $response, $args) {
-		$result = array(
+		$result = [
 			'code' => 400,
 			'url'  => ''
-		);
+		];
 		if ( $request->isPost() ) {
 			$current_lang = $_COOKIE["lang"];
 			$change_lang  = $request->getParam('lang', 'post');
@@ -149,8 +149,8 @@ $app->group('/ajax/', function () {
 $container['notFoundHandler'] = function ($c) {
 	return function ($request, $response) use ($c) {
 		// Variables para pasar a la vista
-	    $vars = array(
-	        'metas' => array(
+	    $vars = [
+	        'metas' => [
 	            'title'       => '',
 	            'description' => '',
 	            'keywords'    => '',
@@ -159,25 +159,25 @@ $container['notFoundHandler'] = function ($c) {
 		        'foto_w'      => '',
 		        'foto_h'      => '',
 		        'foto_mime'   => ''
-	        ),
+	        ],
 			'class_html'    => 'html__error',
 			'class_body'    => '',
-			'css_vendor'    => array(
+			'css_vendor'    => [
 				//
-			),
-			'js_vars' => array(
+			],
+			'js_vars' => [
 				//
-			),
-			'js_vendor_head' => array(
+			],
+			'js_vendor_head' => [
 				//
-			),
-			'js_vendor' => array(
+			],
+			'js_vendor' => [
 				//
-			),
-			'js_extra' => array(
+			],
+			'js_extra' => [
 				//
-			)
-	    );
+			]
+	    ];
 		return $c['view']->render($response, 'errors/404.twig', $vars)->withStatus(404);
 	};
 };
