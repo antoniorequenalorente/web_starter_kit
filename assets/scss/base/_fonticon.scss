@@ -36,15 +36,20 @@ $icons: (
   dropbox: "\EA05",
   email: "\EA06",
   facebook: "\EA07",
-  github: "\EA08",
-  instagram: "\EA09",
-  linkedin: "\EA0A",
-  pinterest: "\EA0B",
-  skype: "\EA0C",
-  twitter: "\EA0D",
-  whatsapp: "\EA0E",
-  windows: "\EA0F",
-  youtube: "\EA10"
+  facebook_2: "\EA08",
+  github: "\EA09",
+  google-plus: "\EA0A",
+  home: "\EA0B",
+  instagram: "\EA0C",
+  linkedin: "\EA0D",
+  pinterest: "\EA0E",
+  skype: "\EA0F",
+  twitter: "\EA10",
+  user: "\EA11",
+  whatsapp: "\EA12",
+  windows: "\EA13",
+  youtube: "\EA14",
+  youtube_2: "\EA15"
 );
 
 @each $name, $icon in $icons {

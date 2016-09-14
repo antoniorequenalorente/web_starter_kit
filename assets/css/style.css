@@ -3699,9 +3699,7 @@ a {
   a:hover, a:focus {
     color: #000099;
     text-decoration: underline; }
-  a:focus {
-    outline: 0; }
-  a:hover, a:active {
+  a:focus, a:hover, a:active {
     outline: 0; }
 
 /*------------------------------------------------------------------------------------------------------------*\
@@ -3745,7 +3743,7 @@ h2, .h2 {
   margin-bottom: 0.5em;
   font-size: 24px;
   font-size: 1.5rem;
-  line-height: 1.0;
+  line-height: 1;
   margin-bottom: 0; }
 
 h3, .h3 {
