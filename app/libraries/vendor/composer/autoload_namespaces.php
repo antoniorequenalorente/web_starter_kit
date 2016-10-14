@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname(dirname(dirname($vendorDir)));
 
 return array(
-    'phpbrowscap\\' => array($vendorDir . '/browscap/browscap-php/src'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
+    'Detection' => array($vendorDir . '/mobiledetect/mobiledetectlib/namespaced'),
 );

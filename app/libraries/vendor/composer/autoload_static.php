@@ -15,6 +15,7 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
+            'Thepixeldeveloper\\Sitemap\\' => 26,
             'Tackk\\Cartographer\\' => 19,
         ),
         'S' => 
@@ -35,6 +36,10 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
         array (
             'League\\Flysystem\\' => 17,
         ),
+        'J' => 
+        array (
+            'Jaybizzle\\CrawlerDetect\\' => 24,
+        ),
         'I' => 
         array (
             'Interop\\Container\\' => 18,
@@ -50,6 +55,10 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
     );
 
     public static $prefixDirsPsr4 = array (
+        'Thepixeldeveloper\\Sitemap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/thepixeldeveloper/sitemap/src',
+        ),
         'Tackk\\Cartographer\\' => 
         array (
             0 => __DIR__ . '/..' . '/tackk/cartographer/src',
@@ -78,6 +87,10 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
+        'Jaybizzle\\CrawlerDetect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src',
+        ),
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
@@ -93,13 +106,6 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
     );
 
     public static $prefixesPsr0 = array (
-        'p' => 
-        array (
-            'phpbrowscap\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/browscap/browscap-php/src',
-            ),
-        ),
         'T' => 
         array (
             'Twig_' => 
@@ -118,6 +124,13 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
             ),
         ),
+        'D' => 
+        array (
+            'Detection' => 
+            array (
+                0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -126,6 +139,7 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
         'IdiormResultSet' => __DIR__ . '/..' . '/j4mie/idiorm/idiorm.php',
         'IdiormString' => __DIR__ . '/..' . '/j4mie/idiorm/idiorm.php',
         'IdiormStringException' => __DIR__ . '/..' . '/j4mie/idiorm/idiorm.php',
+        'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
         'Model' => __DIR__ . '/..' . '/j4mie/paris/paris.php',
         'ORM' => __DIR__ . '/..' . '/j4mie/idiorm/idiorm.php',
         'ORMWrapper' => __DIR__ . '/..' . '/j4mie/paris/paris.php',

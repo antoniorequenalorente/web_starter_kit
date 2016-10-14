@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname(dirname(dirname($vendorDir)));
 
 return array(
+    'Thepixeldeveloper\\Sitemap\\' => array($vendorDir . '/thepixeldeveloper/sitemap/src'),
     'Tackk\\Cartographer\\' => array($vendorDir . '/tackk/cartographer/src'),
     'Slim\\Views\\' => array($vendorDir . '/slim/twig-view/src'),
     'Slim\\Flash\\' => array($vendorDir . '/slim/flash/src'),
@@ -13,6 +14,7 @@ return array(
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
+    'Jaybizzle\\CrawlerDetect\\' => array($vendorDir . '/jaybizzle/crawler-detect/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),

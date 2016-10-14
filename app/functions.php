@@ -1,5 +1,6 @@
 <?php
 
+use Jaybizzle\CrawlerDetect\CrawlerDetect;
 
 /**
  * Establece el idioma
@@ -7,21 +8,36 @@
  * @return [string] Idioma establecido
  */
 function getLang() {
-	$cookie_lang = isset($_COOKIE["lang"]) ? $_COOKIE["lang"] : '';
-	if ($cookie_lang == '') {
-	    $lang = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-	    $lang = substr($lang, 0, 2);
-	} else {
-	    $lang = $cookie_lang;
-	}
+	$CrawlerDetect = new CrawlerDetect;
 
 	$parts_url = explode('/', $_SERVER["REQUEST_URI"]);
 	$lang_url  = $parts_url[1];
-	if ( ($lang_url!='') && ($lang_url!=$lang) && (in_array($lang_url, explode('|', LANGS))) ) {
-		$lang = $lang_url;
-	}
 
-	setcookie('lang', $lang, time()+60*60*24*7, '/');
+	if ( $CrawlerDetect->isCrawler() ) {
+		if ( ($lang_url != '') && in_array($lang_url, explode('|', LANGS)) ) {
+			$lang = $lang_url;
+		} else {
+			$lang = DEFAULT_LANG;
+		}
+	} else {
+		$cookie_lang = isset($_COOKIE["lang"]) ? $_COOKIE["lang"] : '';
+		if ($cookie_lang == '') {
+		    $lang = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+		    $lang = substr($lang, 0, 2);
+		} else {
+		    $lang = $cookie_lang;
+		}
+
+		if ( ($lang_url != 'ajax') && ($lang_url != '') ) {
+			if ( /*($lang_url == '') || */(!in_array($lang_url, explode('|', LANGS))) ) {
+				$lang = DEFAULT_LANG;
+			} elseif ( $lang_url != $lang ) {
+				$lang = $lang_url;
+			}
+		}
+
+		setcookie('lang', $lang, time()+60*60*24*7, '/');
+	}
 	return $lang;
 }
 

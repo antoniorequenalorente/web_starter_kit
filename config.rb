@@ -10,12 +10,12 @@ cache_path = 'cache/sass'
 # Set this to the root of your project when deployed:
 # -----------------------------------------------------------------------------
 
-http_path = "/"
-css_dir = "public/css"
-sass_dir = "app/assets/scss"
-images_dir = "public/images"
-javascripts_dir = "public/js"
-generated_images_dir = 'public/images'
+http_path                  = "/"
+css_dir                    = "public/css"
+sass_dir                   = "assets/scss"
+images_dir                 = "public/images"
+javascripts_dir            = "public/js"
+generated_images_dir       = 'public/images'
 http_generated_images_path = '../images'
 # svg_dir = "assets/svg"
 # fonts_dir = "assets/fonts"
