@@ -22,10 +22,11 @@ function getLang() {
 	} else {
 		$cookie_lang = isset($_COOKIE["lang"]) ? $_COOKIE["lang"] : '';
 		if ($cookie_lang == '') {
-		    $lang = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-		    $lang = substr($lang, 0, 2);
+		    $lang_server  = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+		    $lang_browser = substr($lang_server, 0, 2);
+		    $lang 		  = ( in_array($lang_browser, explode('|', LANGS)) ) ? $lang_browser : DEFAULT_LANG;
 		} else {
-		    $lang = $cookie_lang;
+		    $lang = ( in_array($cookie_lang, explode('|', LANGS)) ) ? $cookie_lang : DEFAULT_LANG;
 		}
 
 		if ( ($lang_url != 'ajax') && ($lang_url != '') ) {
