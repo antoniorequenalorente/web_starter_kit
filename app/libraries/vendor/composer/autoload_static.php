@@ -26,6 +26,7 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
         ),
         'M' => 
@@ -75,6 +76,10 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -115,10 +120,6 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'Pimple' => 
             array (
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',

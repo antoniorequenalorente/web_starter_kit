@@ -3,6 +3,34 @@
     $STYLE - Aquí incluímos todos los módulos (archivos .scss) que se van a compilar en el CSS definitivo: /css/style.css.
 \*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*\
+    $FUNCIONES
+\*------------------------------------------------------------------------------------------------------------*/
+/**
+ * Función para obtener colores grises
+ * @param  {string} $code Puede ser 'X' => 'XXXXXX' | 'XY' => 'XYXYXXY' | 'XYZ' => 'XYZXYZ'
+ * @return {string}       Color en hexadecimal '#XXXXXX'
+ */
+/**
+ * Función para obtener un color
+ * @param  {string} $name  Nombre
+ * @return {integer}       Valor
+ */
+/**
+ * Función para controlar el index
+ * @param  {string} $layer Tipo/nivel
+ * @return {integer}       Valor
+ */
+/**
+ * Función para mantener el tamaño de fuente consistente
+ * @param  {string} $font-size Nombre
+ * @return {integer}           Valor
+ */
+/**
+ * Función para mantener el interlineado de fuente consistente
+ * @param  {string} $line-height Nombre
+ * @return {integer}             Valor
+ */
+/*------------------------------------------------------------------------------------------------------------*\
     $SETTINGS
 \*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*\
@@ -98,34 +126,6 @@ Para convertir PX a EM --> http://pxtoem.com/
  			color: blue;
  		}
  	}
- */
-/*------------------------------------------------------------------------------------------------------------*\
-    $FUNCIONES
-\*------------------------------------------------------------------------------------------------------------*/
-/**
- * Función para obtener colores grises
- * @param  {string} $code Puede ser 'X' => 'XXXXXX' | 'XY' => 'XYXYXXY' | 'XYZ' => 'XYZXYZ'
- * @return {string}       Color en hexadecimal '#XXXXXX'
- */
-/**
- * Función para obtener un color
- * @param  {string} $name  Nombre
- * @return {integer}       Valor
- */
-/**
- * Función para controlar el index
- * @param  {string} $layer Tipo/nivel
- * @return {integer}       Valor
- */
-/**
- * Función para mantener el tamaño de fuente consistente
- * @param  {string} $font-size Nombre
- * @return {integer}           Valor
- */
-/**
- * Función para mantener el interlineado de fuente consistente
- * @param  {string} $line-height Nombre
- * @return {integer}             Valor
  */
 /*------------------------------------------------------------------------------------------------------------*\
     $PLACEHOLDERS
@@ -3248,6 +3248,8 @@ summary {
   box-sizing: border-box; }
   *::before, *::after {
     box-sizing: border-box; }
+  *:hover, *:focus {
+    outline: 0; }
 
 img {
   max-width: 100%;
@@ -3295,41 +3297,65 @@ img {
 .fi--codepen:before {
   content: ""; }
 
-.fi--dropbox:before {
+.fi--down:before {
   content: ""; }
 
-.fi--email:before {
+.fi--dropbox:before {
   content: ""; }
 
-.fi--facebook:before {
+.fi--email:before {
   content: ""; }
 
-.fi--github:before {
+.fi--facebook:before {
   content: ""; }
 
-.fi--instagram:before {
+.fi--facebook_2:before {
   content: ""; }
 
-.fi--linkedin:before {
+.fi--github:before {
   content: ""; }
 
-.fi--pinterest:before {
+.fi--google-plus:before {
   content: ""; }
 
-.fi--skype:before {
+.fi--home:before {
   content: ""; }
 
-.fi--twitter:before {
+.fi--instagram:before {
   content: ""; }
 
-.fi--whatsapp:before {
+.fi--linkedin:before {
   content: ""; }
 
-.fi--windows:before {
+.fi--pinterest:before {
   content: ""; }
 
-.fi--youtube:before {
+.fi--right:before {
   content: ""; }
+
+.fi--skype:before {
+  content: ""; }
+
+.fi--twitter:before {
+  content: ""; }
+
+.fi--up:before {
+  content: ""; }
+
+.fi--user:before {
+  content: ""; }
+
+.fi--whatsapp:before {
+  content: ""; }
+
+.fi--windows:before {
+  content: ""; }
+
+.fi--youtube:before {
+  content: ""; }
+
+.fi--youtube_2:before {
+  content: ""; }
 
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name

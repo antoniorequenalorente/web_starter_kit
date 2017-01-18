@@ -102,6 +102,10 @@ summary {
     &::after {
         box-sizing: border-box;
     }
+    &:hover,
+    &:focus {
+        outline: 0;
+    }
 }
 
 img {

@@ -11,6 +11,7 @@ return array(
     'Slim\\Views\\' => array($vendorDir . '/slim/twig-view/src'),
     'Slim\\Flash\\' => array($vendorDir . '/slim/flash/src'),
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),

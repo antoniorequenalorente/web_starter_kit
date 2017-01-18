@@ -18,10 +18,24 @@
     "jquery"             : "~3",
     "gsap"               : "~1",
     "underscore"         : "~1",
-    "angularjs"          : "~1"
+    // "jquery-cycle2"       : "~2",  // https://github.com/malsup/cycle2
+    // "history.js"          : "~1",  // https://github.com/browserstate/history.js/
+    // "owl.carousel"        : "~2",  // https://github.com/OwlCarousel2/OwlCarousel2
+    // "markerclustererplus" : "~2",  // https://github.com/mahnunchik/markerclustererplus
+    // "jquery.html5loader"  : "~1",  // https://github.com/GianlucaGuarini/jquery.html5loader
+    // "fullpage.js"         : "~2",  // https://github.com/alvarotrigo/fullPage.js
+    // "photoswipe"          : "~4",  // https://github.com/dimsemenov/PhotoSwipe
+    // "scrollmagic"         : "~2",  // https://github.com/janpaepke/ScrollMagic
+    // "plyr"                : "~1",  // https://github.com/Selz/plyr
+    // "animsition"          : "~4",  // https://github.com/blivesta/animsition
+    // "vivus"               : "~0",  // https://github.com/maxwellito/vivus
+    // "venobox"             : "~1",  // https://github.com/nicolafranchini/VenoBox
+    // "masonry"             : "~4",  // https://github.com/desandro/masonry
+    // "jquery.selectBoxIt"  : "~3",  // https://github.com/gfranko/jquery.selectBoxIt.js
   },
   "devDependencies": {
-
+    // "object-fit-images"   : "*",   // https://github.com/bfred-it/object-fit-images/
+    // "picturefill"         : "~3"   // https://github.com/scottjehl/picturefill
   },
   "preen": {
     "jquery": [
@@ -34,11 +48,6 @@
     ],
     "gsap": [
       "src/minified/**/*.js"
-    ],
-    "angularjs": [
-      "*.css",
-      "*.js",
-      "*.map"
     ]
   }
 }
