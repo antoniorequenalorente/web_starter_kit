@@ -2,20 +2,9 @@
 <html lang="{{ constant('LANG') }}" class="{{ class_html }}">
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="{{ asset('img', 'favicon', 'ico', 'favicons') }}" />
-
-		{# Estilos CSS (de terceros) #}
-		{% if css_vendor %}
-			{% for css_file_vendor in css_vendor %}
-				<link rel="stylesheet" href="{{ asset('css', css_file_vendor, '', constant('DIR_VENDOR')) }}" />
-			{% endfor %}
-		{% endif %}
-
-		{# Estilos CSS (principal) #}
-		<link rel="stylesheet" href="{{ asset('css', constant('CSS_STYLE')) }}" />
-
 
 		{# Metas #}
 		<title>{{ metas.title | default(lang('metas.title')) }}</title>
@@ -33,11 +22,33 @@
 		<meta property="og:description" content="{{ metas.description | default(lang('metas.description')) }}" />
 		<link rel="image_src" href="{{ metas.foto | default('') }}">
 
+		{# Enlaces a otros idiomas #}
+		{# {% if (constant('LANG') == 'en') %}
+			<link rel="alternate" href="{{ url(current_section, 'fr', base_section) }}" hreflang="fr" />
+			<link rel="alternate" href="{{ url(current_section, 'es', base_section) }}" hreflang="es" />
+		{% elseif (constant('LANG') == 'fr') %}
+			<link rel="alternate" href="{{ url(current_section, 'en', base_section) }}" hreflang="en" />
+			<link rel="alternate" href="{{ url(current_section, 'es', base_section) }}" hreflang="es" />
+		{% elseif (constant('LANG') == 'es') %}
+			<link rel="alternate" href="{{ url(current_section, 'en', base_section) }}" hreflang="en" />
+			<link rel="alternate" href="{{ url(current_section, 'fr', base_section) }}" hreflang="fr" />
+		{% endif %}
+		<link rel="alternate" href="{{ url(current_section, constant('LANG'), base_section) }}" hreflang="{{ constant('LANG') }}" /> #}
+
+		{# Estilos CSS (de terceros) #}
+		{% if css_vendor %}
+			{% for css_file_vendor in css_vendor %}
+				<link rel="stylesheet" href="{{ asset('css', css_file_vendor, '', constant('DIR_VENDOR')) }}" />
+			{% endfor %}
+		{% endif %}
+
+		{# Estilos CSS (principal) #}
+		<link rel="stylesheet" href="{{ asset('css', constant('CSS_STYLE')) ~ constant('MOD_DATE') }}" />
 
         {# Scripts #}
 		{% if js_vendor_head %}
 			{% for js_vendor_src, js_vendor_file in js_vendor_head %}
-				<script src="{{ asset('js', js_vendor_file, '', js_vendor_src) }}"></script>
+				<script src="{{ asset('js', js_vendor_file, '', js_vendor_src) ~ constant('MOD_DATE') }}"></script>
 			{% endfor %}
 		{% endif %}
 
@@ -63,20 +74,20 @@
 
 
 		{# SCRIPTS #}
-		<script src="{{ asset('js', constant('JS_BASIC'), '', 'vendor') }}"></script>
-		<script src="{{ asset('js', constant('JS_PLUGINS')) }}"></script>
+		<script src="{{ asset('js', constant('JS_BASIC'), '', 'vendor') ~ constant('MOD_DATE') }}"></script>
+		<script src="{{ asset('js', constant('JS_PLUGINS')) ~ constant('MOD_DATE') }}"></script>
 
 		{% if js_vendor %}
 			{% for js_file_vendor in js_vendor %}
-				<script src="{{ asset('js', js_file_vendor, '', constant('DIR_VENDOR')) }}"></script>
+				<script src="{{ asset('js', js_file_vendor, '', constant('DIR_VENDOR')) ~ constant('MOD_DATE') }}"></script>
 			{% endfor %}
 		{% endif %}
 
-		<script src="{{ asset('js', constant('JS_MAIN')) }}"></script>
+		<script src="{{ asset('js', constant('JS_MAIN')) ~ constant('MOD_DATE') }}"></script>
 
 		{% if js_extra %}
 			{% for js_file in js_extra %}
-				<script src="{{ asset('js', js_file) }}"></script>
+				<script src="{{ asset('js', js_file) ~ constant('MOD_DATE') }}"></script>
 			{% endfor %}
 		{% endif %}
 

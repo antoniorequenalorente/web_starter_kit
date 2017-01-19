@@ -69,7 +69,7 @@ var gulp 		 = require('gulp'),
 ================================================================================================================== */
 
 // Directorios
-var dirAssets = 'app/assets/';
+var dirAssets = 'assets/';
 var dirPublic = 'public/';
 
 // Recursos
@@ -139,8 +139,6 @@ var js = {
 	gsapJquery    : assets.jsVendor + 'gsap/src/minified/jquery.gsap.min.js',
 	gsapTweenMax  : assets.jsVendor + 'gsap/src/minified/TweenMax.min.js',
 	underscore    : assets.jsVendor + 'underscore/underscore-min.js',
-	angular       : assets.jsVendor + 'angularjs/angular.min.js',
-	svg4everybody : assets.jsVendor + 'svg4everybody/dist/svg4everybody.min.js'
 };
 
 // Ficheros CSS
@@ -154,12 +152,11 @@ var jsBasicLibraries = [
 	js.underscore,
 	js.gsapJquery,
 	js.gsapTweenMax,
-	js.svg4everybody
 ];
 
 // Conjunto de librerías JavaScript de terceros
 var	jsVendorLibraries = [
-	js.angular
+
 ];
 
 // Conjunto de documentos de estilos de terceros
@@ -195,7 +192,7 @@ gulp.task('default', [
 		'browser-sync'
 	], function () {
 	gulp.watch( files.imagesSvg, 	['images-svg'] );
-	gulp.watch( files.imagesPublic, ['images-min'] );
+	//gulp.watch( files.imagesPublic, ['images-min'] );
 	gulp.watch( files.fonticon, 	['fonticon'] );
 	gulp.watch( files.iconsPng, 	['sprite-png'] );
 	gulp.watch( files.sassAll, 		['css'] );
@@ -397,7 +394,8 @@ gulp.task('fonticon', function() {
 			fontName      : 'fonticon',
 			normalize     : true,
 			//appendUnicode : true,
-			formats       : ['ttf', 'eot', 'woff', 'woff2', 'svg']
+			formats       : ['ttf', 'eot', 'woff', 'woff2', 'svg'],
+			timestamp     : Math.round(Date.now()/1000)
 		}))
 	    .on('glyphs', function(glyphs, options) {
 			gulp.src( assets.sass + 'base/_fonticon-template.scss' )

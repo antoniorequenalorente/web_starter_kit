@@ -15,10 +15,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery"             : "~2",
+    "jquery"             : "~3",
     "gsap"               : "~1",
     "underscore"         : "~1",
-    "angularjs"          : "~1"
   },
   "devDependencies": {
 
@@ -34,11 +33,6 @@
     ],
     "gsap": [
       "src/minified/**/*.js"
-    ],
-    "angularjs": [
-      "*.css",
-      "*.js",
-      "*.map"
     ]
   }
 }
