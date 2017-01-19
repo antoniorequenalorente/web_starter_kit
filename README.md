@@ -194,18 +194,33 @@ devolvería:
 # Otras librerías de apoyo
 ### Javascript / jQuery
 ***[Object Fit Images](https://github.com/bfred-it/object-fit-images/)***
+
 ***[Picture Fill](https://github.com/scottjehl/picturefill)***
+
 ***[jQuery Cycle 2](https://github.com/malsup/cycle2)***
+
 ***[History JS](https://github.com/browserstate/history.js/)***
+
 ***[OWL Carousel](https://github.com/OwlCarousel2/OwlCarousel2)***
+
 ***[Marker Clusterer Plus](https://github.com/mahnunchik/markerclustererplus)***
+
 ***[jQuery HTML5 Loader](https://github.com/GianlucaGuarini/jquery.html5loader)***
+
 ***[Fullpage JS](https://github.com/alvarotrigo/fullPage.js)***
+
 ***[Photoswipe](https://github.com/dimsemenov/PhotoSwipe)***
+
 ***[Scroll Magic](https://github.com/janpaepke/ScrollMagic)***
+
 ***[Plyr](https://github.com/Selz/plyr)***
+
 ***[Animsition](https://github.com/blivesta/animsition)***
+
 ***[Vivus](https://github.com/maxwellito/vivus)***
+
 ***[Venobox](https://github.com/nicolafranchini/VenoBox)***
+
 ***[Masonry](https://github.com/desandro/masonry)***
+
 ***[jQuery SelectBoxIt](https://github.com/gfranko/jquery.selectBoxIt.js)***
