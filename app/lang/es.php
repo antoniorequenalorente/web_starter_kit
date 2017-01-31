@@ -2,6 +2,8 @@
 
 return [
 
+	'locale' => 'es_ES',
+
 	'metas' => [
 		'title'       => 'Página web',
 		'description' => 'Descripción de página web',
@@ -14,16 +16,5 @@ return [
 			'interior' => 'listado-paises'
 		]
 	],
-
-	'texto' => [
-		'saludo'     => '¡Hola!',
-		'bienvenida' => 'Bienvenid@'
-	],
-
-	'btn' => [
-		'entrar' => 'entrar',
-		'atras'  => 'atrás',
-		'salir'  => 'salir'
-	]
 
 ];

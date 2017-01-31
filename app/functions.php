@@ -30,7 +30,7 @@ function getLang() {
 		}
 
 		if ( ($lang_url != 'ajax') && ($lang_url != '') ) {
-			if ( /*($lang_url == '') || */(!in_array($lang_url, explode('|', LANGS))) ) {
+			if ( !in_array( $lang_url, explode('|', LANGS) ) ) {
 				$lang = DEFAULT_LANG;
 			} elseif ( $lang_url != $lang ) {
 				$lang = $lang_url;

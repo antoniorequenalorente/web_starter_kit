@@ -11,9 +11,9 @@
 		{% include 'partials/menu_languages.twig' %}
 
 		<div class="wrapper">
-			<h1>{{ lang('texto.saludo') }}</h1>
-			<h2>{{ lang('texto.bienvenida') }}</h2>
-			<p><a class="btn  btn--large" href="{{ url('seccion.interior') }}">{{ lang('btn.entrar') }}</a></p>
+			<h1>{% trans '¡Hola!' %}</h1>
+			<h2>{% trans 'Bienvenid@' %}</h2>
+			<p><a class="btn  btn--large" href="{{ url('seccion.interior') }}">{% trans 'Entrar' %}</a></p>
 			<hr>
 			<ul class="links">
 				<li><a href="https://es.linkedin.com/in/antoniorequenalorente" target="_blank" class="fi  fi--linkedin"></a></li>
