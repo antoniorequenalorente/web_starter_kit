@@ -2,6 +2,8 @@
 
 return [
 
+	'locale' => 'en_GB',
+
 	'metas' => [
 		'title'       => 'Webpage',
 		'description' => 'Description of webpage',
@@ -14,16 +16,5 @@ return [
 			'interior' => 'country-list'
 		]
 	],
-
-	'texto' => [
-		'saludo'     => '¡Hello!',
-		'bienvenida' => 'Welcome'
-	],
-
-	'btn' => [
-		'entrar' => 'go',
-		'atras'  => 'go back',
-		'salir'  => 'exit'
-	]
 
 ];

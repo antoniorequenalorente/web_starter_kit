@@ -19,7 +19,7 @@ Está basado en el *framework PHP Slim*, que se emplea como controlador principa
 	5. Ejecutar la tarea ***gulp js*** para generar los ficheros JavaScript
 	6. Ejecutar la tarea ***gulp fonticon*** para generar la tipografía iconográfica
 	7. Ejecutar la tarea ***gulp images-svg*** para combinar los SVG's
-	8. Ejecutar la tarea ***gulp sprite-png*** para combinar los PNG's en un sprite	
+	8. Ejecutar la tarea ***gulp sprite-png*** para combinar los PNG's en un sprite
 	9. Ejecutar la tarea ***gulp css*** para generar los estilos
 4. Volcar el contenido de la base de datos de ejemplo ***(SAMPLE_database.sql)***
 5. Renombrar el fichero ***.env.SAMPLE*** a ***.env*** y modificar sus variables *(recuerda que debes apuntar a la carpeta "public")*
@@ -37,9 +37,10 @@ Es recomendable echar un vistazo al fichero ``gulpfile.js`` y ver los métodos q
 <br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **controllers**
 <br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **database** &#187; *clases que se corresponden con las tablas de la base de datos*
 <br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **extensions**
-<br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **lang** &#187; *un fichero por cada idioma para textos, url's, etc...*
+<br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **lang** &#187; *un fichero por cada idioma*
 <br>&#9500;&#9472;&nbsp;![alt text][carpeta_open] **libraries**
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&nbsp;![alt text][carpeta_open] **vendor** &#187; *librerías PHP de terceros gestionadas por ``composer.json``*
+<br>&#9492;&#9472;&nbsp;![alt text][carpeta_open] **locale** &#187; *traducciones de textos (dentro hay una carpeta por idioma)*
 <br>&#9492;&#9472;&nbsp;![alt text][carpeta_open] **views** &#187; *plantillas para el 'front-end'*
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **dev** &#187; *para usar durante el desarrollo*
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9500;&#9472;&nbsp;![alt text][carpeta_open] **errors** &#187; *plantillas de páginas de error*
@@ -161,7 +162,7 @@ Ejemplo:
 	color: blue;
 	@include respond-to(bp_3, min) {
 		color: green;
-	}	
+	}
 }
 ```
 
@@ -224,3 +225,6 @@ devolvería:
 ***[Masonry](https://github.com/desandro/masonry)***
 
 ***[jQuery SelectBoxIt](https://github.com/gfranko/jquery.selectBoxIt.js)***
+
+### PHP
+***[Gettext](https://github.com/oscarotero/Gettext)***

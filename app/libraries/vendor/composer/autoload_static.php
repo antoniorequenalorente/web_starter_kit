@@ -45,6 +45,11 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
         array (
             'Interop\\Container\\' => 18,
         ),
+        'G' => 
+        array (
+            'Gettext\\Languages\\' => 18,
+            'Gettext\\' => 8,
+        ),
         'F' => 
         array (
             'FastRoute\\' => 10,
@@ -100,6 +105,14 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
+        'Gettext\\Languages\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gettext/languages/src',
+        ),
+        'Gettext\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gettext/gettext/src',
+        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
@@ -113,6 +126,10 @@ class ComposerStaticInit0a4b5996c9c272a90d0fcda2cc73f80e
     public static $prefixesPsr0 = array (
         'T' => 
         array (
+            'Twig_Extensions_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/extensions/lib',
+            ),
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',

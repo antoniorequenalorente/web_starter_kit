@@ -21,6 +21,7 @@ $container['view'] = function ($c) {
 	$view->addExtension(new Twig_Extension_Debug());
 	$view->addExtension(new Lang_Twig_Extension());
 	$view->addExtension(new Asset_Twig_Extension());
+	$view->addExtension(new Twig_Extensions_Extension_I18n());
 
 	return $view;
 };

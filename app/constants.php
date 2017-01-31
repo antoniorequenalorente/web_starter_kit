@@ -49,7 +49,7 @@ define( 'DIR_AUDIOS', 		DIR_FILES.'audios'.SLASH );
 define( 'DIR_AUDIOS_ABS', 	BASE_URL.DIR_AUDIOS );
 
 // Descargas
-define( 'DIR_DOWNLOADS', 		DIR_FILES.'descargas'.SLASH );
+define( 'DIR_DOWNLOADS', 		DIR_FILES.'downloads'.SLASH );
 define( 'DIR_DOWNLOADS_ABS', 	BASE_URL.DIR_DOWNLOADS );
 
 

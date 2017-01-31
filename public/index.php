@@ -2,6 +2,7 @@
 
 // Carga todas las librerías PHP
 include_once realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/libraries/vendor/autoload.php';
+use Gettext\GettextTranslator;
 
 // Iniciliza PHPDOTENV para usar las variables del fichero .env
 $dotenv = new Dotenv\Dotenv(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'));
@@ -27,8 +28,13 @@ define('DEFAULT_LANG', getenv('DEFAULT_LANG'));
 
 // Lógica para asignar el idioma
 define('LANG', getLang());
-
 include_once realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/lang/' . LANG . '.php';
+
+// Traducciones
+$t = new GettextTranslator();
+$t->setLanguage( lang('locale') );
+$t->loadDomain('messages', realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/app/locale');
+$t->register();
 
 // Para poder usar Bases de Datos
 if ( getenv('DB_USE') == 'true' ) {
